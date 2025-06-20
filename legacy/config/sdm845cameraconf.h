@@ -1,0 +1,1 @@
+#define CONFIG_SPECTRA_CAMERA 1

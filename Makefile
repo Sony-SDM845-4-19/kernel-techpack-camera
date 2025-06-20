@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
+ifneq ($(CONFIG_ARCH_SDM845), y)
+
 # auto-detect subdirs
 ifeq ($(CONFIG_ARCH_SM8150), y)
 include $(srctree)/techpack/camera/config/sm8150camera.conf
@@ -50,4 +52,8 @@ LINUXINCLUDE    += \
 obj-y += drivers/
 else
 $(info Target not found)
+endif
+
+else
+obj-y += legacy/
 endif
